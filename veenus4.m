@@ -1,0 +1,18 @@
+clc;clear;
+time=0:0.01:10;
+GRF_Standing=700+10*sin(2*pi* 0.5*time);
+GRF_Lifting=900+20*sin(2*pi*0.5*time);
+figure;
+plot(time,GRF_Standing,'b','LineWidth',1.5);hold on;
+plot(time,GRF_Lifting,'r','LineWidth',1.5);
+xlabel('Time(s)');
+ylabel('Ground Reaction Force(N)');
+legend('standing','lifting');
+title('Ground Reatcion Forces during Standing vs Lifting');
+grid on;
+mean Standing=mean(GRF_Standing);
+mean Lifting=mean(GRF_Lifting);
+fprintf('---Grand Reaction Force Analysis---\n');
+fprintf('Average GRF during standing:%.2fN\n',meanStanding);
+fprintf('Average GRF during standing:%.2fN\n',meanLifting);
+fprintf('Increase in GRF due to lifting:%.2fN\n',meanLifting-meanStanding);
