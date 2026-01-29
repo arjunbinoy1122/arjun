@@ -1,3 +1,4 @@
+
 on:
   push:
     branches: [ "main" ]
@@ -6,10 +7,3 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Run a sample command
-        run: echo "Build job is running"
